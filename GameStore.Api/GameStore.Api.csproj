@@ -1,3 +1,7 @@
+<!-- 
+  Project File
+  Defines the configuration for .NET
+-->
 <Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
