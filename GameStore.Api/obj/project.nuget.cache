@@ -1,10 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "qvlSzEeeYTsGwavXqZ0IpJIwZPLJ6kAFyCzJxn8lIgdgldAdGzuke5l/Gcv56nXxaOU+SIZs9WJ61Dm/Q8c0Ew==",
+  "dgSpecHash": "qQoBIstsPuifOyrKUvPBVr6oqzYqQTr3evQ1Vgls/3ijqiO9mo3c57Pf/jf/GBXQ9/07s2UZbkPgWzv9oSkyYg==",
   "success": true,
   "projectFilePath": "/home/evan/Learning/GameStore/GameStore.Api/GameStore.Api.csproj",
-  "expectedPackageFiles": [
-    "/home/evan/.nuget/packages/microsoft.netcore.app.host.linux-x64/8.0.17/microsoft.netcore.app.host.linux-x64.8.0.17.nupkg.sha512"
-  ],
+  "expectedPackageFiles": [],
   "logs": []
 }
