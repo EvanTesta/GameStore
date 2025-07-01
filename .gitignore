@@ -483,5 +483,6 @@ $RECYCLE.BIN/
 
 # Vim temporary swap files
 *.swp
-GameStore.Api/obj/Debug/net8.0/GameStore.Api.AssemblyInfo.cs
-GameStore.Api/obj/Debug/net8.0/GameStore.Api.AssemblyInfoInputs.cache
+
+obj/
+bin/
