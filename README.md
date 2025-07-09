@@ -1,10 +1,25 @@
 # Game Store
 This is a simple game store catalog website where you can perform basic CRUD operations on a SQLite database. The project is built using ASP.NET and Blazor, and I added Docker to make deployment easier. I'm planning to take what I learned from this project and apply it to a future DnD web app.
-### Credits 
+
+## Credits 
 I followed along to a youtube course to make this project, all code credit goes to **Julio Casal**. The videos can be found here:   
 https://www.youtube.com/watch?v=AhAxLiGC7Pc  
 https://www.youtube.com/watch?v=RBVIclt4sOo&t=17010s  
 
+# Requirements
+To run locally you need dotnet install on your computer, and if you want to run it through docker you need docker.<br><br>
+**Windows**
+```console
+https://learn.microsoft.com/en-us/dotnet/core/install/windows
+```
+**Linux**
+```console
+https://learn.microsoft.com/en-us/dotnet/core/install/linux
+```
+**Docker**
+```console
+https://www.docker.com/get-started/
+```  
 # How To Run Locally 
 First cd into the api, and run it
 ```console
