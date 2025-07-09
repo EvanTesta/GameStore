@@ -1,5 +1,6 @@
 ﻿@page "/editgame"
 @page "/editgame/{id:int}"
+@rendermode InteractiveServer
 
 @inject NavigationManager NavigationManager
 @inject GamesClient GamesClient
@@ -16,7 +17,10 @@ else
 {
   <div class="row">
     <div class="col-md-4">
-      <EditForm Model="@game" FormName="editGame" OnValidSubmit="HandleSubmit">
+      <EditForm Model="@game" 
+      FormName="editGame" 
+      OnValidSubmit="HandleSubmitAsync"
+      Enhance>
         <DataAnnotationsValidator />
         <div class="mb-3">
           <label for="name" class="form-label">Name:</label>
@@ -62,14 +66,14 @@ else
   private string title = string.Empty;
   
   // OnParameterSet will run at the start and when the form is submitted
-  protected override void OnParametersSet() 
+  protected override async Task OnParametersSetAsync() 
   {
     if (game is not null) {
       return;
     }
 
     if (Id is not null) {
-      game = GamesClient.GetGame(Id.Value);
+      game = await GamesClient.GetGameAsync(Id.Value);
       title = $"Edit {game.Name}";
     } else {
       game = new ()
@@ -80,18 +84,18 @@ else
       title = "New Game";
     }
   }
-  protected override void OnInitialized() {
-    genres = GenresClient.GetGenres();
+  protected override async Task OnInitializedAsync() {
+    genres = await GenresClient.GetGenresAsync();
   }
 
-  private void HandleSubmit() {
+  private async Task HandleSubmitAsync() {
     ArgumentNullException.ThrowIfNull(game);
 
     if (Id is null) {
-      GamesClient.AddGame(game);
+      await GamesClient.AddGameAsync(game);
     } else {
       game.Id = Id.Value;
-      GamesClient.UpdateGame(game);
+      await GamesClient.UpdateGameAsync(game);
     }
 
     NavigationManager.NavigateTo("/");

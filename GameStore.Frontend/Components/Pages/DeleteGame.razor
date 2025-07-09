@@ -1,5 +1,6 @@
 ﻿@inject GamesClient Client
 @inject NavigationManager NavigationManager 
+@rendermode InteractiveServer
 
 <div class="modal fade" id="@GetModalId(Game)" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -13,7 +14,7 @@
         <button type="button"
           class="btn btn-primary" 
           data-bs-dismiss="modal"
-          @onclick="@Confirm">Delete</button>
+          @onclick="@ConfirmAsync">Delete</button>
       </div>
     </div>
   </div>
@@ -33,8 +34,8 @@
     return $"deleteModal-{game.Id}";
   }
 
-  private void Confirm() {
-    Client.DeleteGame(Game!.Id);
+  private async Task ConfirmAsync() {
+    await Client.DeleteGameAsync(Game!.Id);
     NavigationManager.Refresh();
   }
 }
